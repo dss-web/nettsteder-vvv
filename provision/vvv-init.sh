@@ -24,6 +24,9 @@ if [[ ! -f "${VVV_PATH_TO_SITE}/local-config.php" ]]; then
 	sed -i "s#username_here#wp#" "${VVV_PATH_TO_SITE}/public_html/local-config-sample.php"
 	sed -i "s#password_here#wp#" "${VVV_PATH_TO_SITE}/public_html/local-config-sample.php"
 	noroot mv "${VVV_PATH_TO_SITE}/public_html/local-config-sample.php" "${VVV_PATH_TO_SITE}/local-config.php"
+else
+	cd ${VVV_PATH_TO_SITE}/public_html
+	noroot git pull
 fi
 
 export ACF_PRO_KEY=${ACF_PRO_KEY}
