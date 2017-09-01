@@ -34,10 +34,10 @@ export ACF_PRO_KEY=${ACF_PRO_KEY}
 cd ${VVV_PATH_TO_SITE}/public_html
 if [[ ! -d "${VVV_PATH_TO_SITE}/public_html/vendor" ]]; then
 	echo "Running composer install"
-	noroot composer update
+	noroot composer install -vvv
 else
 	echo "Running composer update"
-	noroot update
+	noroot composer update
 fi
 
 
