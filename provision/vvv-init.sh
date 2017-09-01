@@ -28,7 +28,7 @@ fi
 
 export ACF_PRO_KEY=${ACF_PRO_KEY}
 export GITHUB_TOKEN=${GITHUB_TOKEN}
-export COMPOSER_AUTH=`echo '{"github-oauth": { "github.com": "{{github_token}}"}}' | sed -i "s#{{github_token}}#${GITHUB_TOKEN}#"`
+export COMPOSER_AUTH=`echo '{"github-oauth": { "github.com": "{{github_token}}"}}' | sed "s#{{github_token}}#${GITHUB_TOKEN}#"`
 
 
 echo "ACF_PRO_KEY: ${ACF_PRO_KEY}"
