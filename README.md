@@ -4,6 +4,8 @@ This is not live yet -- under development.
 
 [Install VVV](https://varyingvagrantvagrants.org/docs/en-US/installation/)
 
+To be able to clone private repos, [add a new SSH key](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) to your GitHub account.
+
 In the local VVV folder
 - create the following vvv-custom.yml file:
 ```yml
