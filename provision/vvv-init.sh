@@ -28,6 +28,9 @@ fi
 
 export ACF_PRO_KEY=${ACF_PRO_KEY}
 export GITHUB_TOKEN=${GITHUB_TOKEN}
+export COMPOSER_AUTH='{"github-oauth": { "github.com": "${GITHUB_TOKEN}"}}'
+
+echo "AUTH: ${COMPOSER_AUTH}"
 
 # Composer
 if [[ ! -d "${VVV_PATH_TO_SITE}/public_html/vendor" ]]; then
