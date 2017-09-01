@@ -10,6 +10,7 @@ WP_TYPE=`get_config_value 'wp_type' "single"`
 DB_NAME=`get_config_value 'db_name' "${VVV_SITE_NAME}"`
 DB_NAME=${DB_NAME//[\\\/\.\<\>\:\"\'\|\?\!\*-]/}
 ACF_PRO_KEY=`get_config_value 'acf_pro_key' "xyz"`
+GITHUB_TOKEN=`get_config_value 'github_token' "xyz"`
 
 # Clone the Nettsteder repo
 if [[ ! -f "${VVV_PATH_TO_SITE}/local-config.php" ]]; then
@@ -25,7 +26,8 @@ if [[ ! -f "${VVV_PATH_TO_SITE}/local-config.php" ]]; then
 	noroot mv "${VVV_PATH_TO_SITE}/public_html/local-config-sample.php" "${VVV_PATH_TO_SITE}/local-config.php"
 fi
 
-env ACF_PRO_KEY=${ACF_PRO_KEY}
+export ACF_PRO_KEY=${ACF_PRO_KEY}
+export GITHUB_TOKEN=${GITHUB_TOKEN}
 
 # Composer
 if [[ ! -d "${VVV_PATH_TO_SITE}/public_html/vendor" ]]; then
