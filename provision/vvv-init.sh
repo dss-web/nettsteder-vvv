@@ -85,5 +85,19 @@ else
   noroot wp core update --version="${WP_VERSION}"
 fi
 
+#
+# Plugins and theme
+#
+
+# Activate all plugins
+noroot wp plugin activate --all
+
+# Activate the default theme
+noroot wp theme activate dss-wordpress-theme
+
+#
+# nginx
+#
+
 cp -f "${VVV_PATH_TO_SITE}/provision/vvv-nginx.conf.tmpl" "${VVV_PATH_TO_SITE}/provision/vvv-nginx.conf"
 sed -i "s#{{DOMAINS_HERE}}#${DOMAINS}#" "${VVV_PATH_TO_SITE}/provision/vvv-nginx.conf"
