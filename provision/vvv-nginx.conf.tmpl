@@ -10,4 +10,10 @@ server {
     set          $upstream {upstream};
 
     include      /etc/nginx/nginx-wp-common.conf;
+
+	if (!-e $request_filename) {
+	    rewrite /wp-admin$ $scheme://$host$uri/ permanent;
+	    rewrite ^/[_0-9a-zA-Z-]+(/wp-.*) /wp$1 last;
+	    rewrite ^/[_0-9a-zA-Z-]+(/.*\.php)$ /wp$1 last;
+	}	
 }
