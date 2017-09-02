@@ -10,9 +10,28 @@ server {
     set          $upstream {upstream};
 
 	if (!-e $request_filename) {
-	    rewrite /wp-admin$ $scheme://$host$uri/ permanent;
-	    rewrite ^/[_0-9a-zA-Z-]+(/wp-.*) /wp$1 last;
-	    rewrite ^/[_0-9a-zA-Z-]+(/.*\.php)$ /wp$1 last;
+
+	        # Add trailing slash to */wp-admin requests.
+	        rewrite /wp-admin$ $scheme://$host$uri/ permanent;
+
+	        # WordPress is in a subdir
+	        rewrite (/wp-.*) /wp$1 last;
+	        rewrite (/.*\.php)$ /wp$1 last;
+
+	        # Yoast SEO Sitemap
+	        rewrite ^/sitemap_index\.xml$ /index.php?sitemap=1 last;
+	        rewrite ^/([^/]+?)-sitemap([0-9]+)?\.xml$ /index.php?sitemap=$1&sitemap_n=$2 last;
+	}
+
+	location / {
+		# WordPress is in a subdir
+	    try_files $uri $uri/ /wp/index.php?$args;
+	}
+
+	location ~ \.php$ {
+
+		# WordPress is in a subdir
+	    try_files $uri /wp/index.php;
 	}
 
     include      /etc/nginx/nginx-wp-common.conf;
