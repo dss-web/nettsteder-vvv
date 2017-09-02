@@ -21,7 +21,6 @@ sites:
       wp_type: subdirectory
       wp_version: latest
       acf_pro_key: acf_pro_license_key
-      github_token: github_token_for_dss-web_private_repo
 
 vm_config:
   memory: 2048
@@ -33,6 +32,5 @@ utilities:
 utility-sources:
   core: https://github.com/Varying-Vagrant-Vagrants/vvv-utilities.git
 ```
-- create the nettsteder folder: `mkdir nettsteder`
 
-In the local VVV folder, run `vagrant reload --provision`
+In the local VVV folder, run `vagrant up` or `vagrant reload --provision` if vagrant is already running.
