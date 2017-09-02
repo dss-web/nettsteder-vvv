@@ -90,9 +90,11 @@ fi
 #
 
 # Activate all plugins
+echo "Active all plugins"
 noroot wp plugin activate --all
 
 # Activate the default theme
+echo "Active default theme"
 noroot wp theme activate dss-wordpress-theme
 
 #
