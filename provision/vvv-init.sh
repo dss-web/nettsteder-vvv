@@ -31,10 +31,11 @@ fi
 export ACF_PRO_KEY=${ACF_PRO_KEY}
 
 # Composer
+ssh-keyscan -H github.com >> ~/.ssh/known_hosts ssh -Ts git@github.com
 cd ${VVV_PATH_TO_SITE}/public_html
 if [[ ! -d "${VVV_PATH_TO_SITE}/public_html/vendor" ]]; then
 	echo "Running composer install"
-	noroot composer install -vvv
+	noroot composer install
 else
 	echo "Running composer update"
 	noroot composer update
