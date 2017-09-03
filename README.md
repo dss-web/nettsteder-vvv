@@ -2,13 +2,13 @@
 
 This is not live yet -- under development.
 
-[Install VVV](https://varyingvagrantvagrants.org/docs/en-US/installation/)
+1) [Install VVV](https://varyingvagrantvagrants.org/docs/en-US/installation/)
 
-To be able to clone the private repositories:
+2) To be able to clone the private repositories:
 - [Add a new SSH key](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) to your GitHub account.
 - Set up SSH forwarding by [adding your SSH key to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent)
 
-In the local VVV folder
+3) In the local VVV folder
 - create the following vvv-custom.yml file:
 ```yml
 sites:
@@ -33,4 +33,4 @@ utility-sources:
   core: https://github.com/Varying-Vagrant-Vagrants/vvv-utilities.git
 ```
 
-In the local VVV folder, run `vagrant up` or `vagrant reload --provision` if vagrant is already running.
+4) In the local VVV folder run `vagrant up`, or `vagrant reload --provision` if vagrant is already running.
