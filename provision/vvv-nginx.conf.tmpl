@@ -68,13 +68,13 @@ server {
 	# }
 
 	location ~ \.php$ {
-		
+
 		# WordPress is in a subdir
 		try_files $uri /wp/index.php;
 
-	    # Try the files specified in order. In our case, try the requested URI and if
-	    # that fails, try (successfully) to pass a 404 error.
-	    try_files      $uri =404;
+	    # # Try the files specified in order. In our case, try the requested URI and if
+	    # # that fails, try (successfully) to pass a 404 error.
+	    # try_files      $uri =404;
 
 	    # Include the fastcgi_params defaults provided by nginx
 	    include        /etc/nginx/fastcgi_params;
