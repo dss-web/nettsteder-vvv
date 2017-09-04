@@ -24,6 +24,7 @@ sites:
 
 vm_config:
   memory: 2048
+  cores: 2
 
 utilities:
   core:
